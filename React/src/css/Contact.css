@@ -1,0 +1,87 @@
+:root{
+    --colorBoton: #27ea97;
+    --color2: #19d4b8;
+    --color3: #1ef61e;
+    --fuente: 'Dosis', sans-serif;
+}
+.titulo__contactanos{
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    font-size: 2.6rem;
+    /* color: var(--color3); */
+    font-family: var(--fuente);
+}
+
+.contacto-bg{
+    margin-top: 1rem;
+    background-image: url('../images/Contactanos.jpeg');
+    height: 40rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.formulario{
+    margin: 0 auto;
+    background-color: white;
+    padding: 3rem ;
+    margin-top: -25rem;
+    width: 95%;
+}
+.formulario__campo{
+    display: flex;
+    margin-bottom: 2rem;
+    gap: 2rem;
+    justify-content: center;
+    
+}
+.formulario__label{
+    flex: 0 0 10%;
+    text-align: right;
+
+}
+@media (max-width: 767px) { 
+     .formulario__campo{
+        flex-direction: column;
+        text-align: center;
+     }
+
+     .formulario__label{
+        text-align: center;
+        margin-bottom: -2rem;
+     }
+     .input{
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+     }
+     .enviar{
+        margin-bottom: -3rem;
+     }
+}
+.input{
+    flex: 1;
+    border-radius: 0.5rem;
+    border: 1px solid var(--color2);
+}
+.boton{
+    margin-top: 2rem;
+    color: white;
+    padding: 0.5rem;
+    /* border-radius: 10px; */
+    border: none;
+    text-transform: uppercase;
+    padding: 0.5rem 2rem;
+}
+.enviar{    
+    background-color: var(--colorBoton);
+}
+.regresar{
+    background-color: var(--color3);
+}
+.boton:hover{
+    background-color: var(--color2);
+}
+
+.formulario__campo textarea {
+    height: 10rem;
+    
+}
