@@ -1,8 +1,21 @@
-# React + Vite
+Proyecto React con Vite para Las Cascadas Hoter
+Este es el repositorio para el proyecto Las Cascadas Hoter, una aplicación web construida con React y configurada con Vite para un desarrollo rápido y eficiente.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Descripción
+Las Cascadas Hoter es una aplicación web destinada a brindar a los clientes una experiencia sencilla y agradable para reservar habitaciones en el hotel Las Cascadas. Permite a los usuarios ver información detallada sobre las habitaciones, verificar la disponibilidad y realizar reservas de manera fácil y rápida.
 
-Currently, two official plugins are available:
+Características
+Catálogo de Habitaciones: Muestra una lista de todas las habitaciones disponibles con detalles como el tipo de habitación, precio y disponibilidad.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Filtros de Búsqueda: Permite a los usuarios filtrar las habitaciones según sus preferencias, como tipo de habitación, capacidad y precio.
+
+Reservas: Los usuarios pueden seleccionar fechas y realizar reservas de habitaciones disponibles.
+
+Autenticación de Usuarios (Opcional): Se puede implementar un sistema de autenticación para permitir a los usuarios registrarse y acceder a sus reservas anteriores.
+
+Tecnologías Utilizadas
+React: Biblioteca de JavaScript para construir interfaces de usuario interactivas y reutilizables.
+
+Vite: Herramienta de construcción y empaquetado que proporciona un entorno de desarrollo extremadamente rápido para aplicaciones web.
+
+CSS Modules: Utilizados para una gestión eficiente de estilos y evitar conflictos.
