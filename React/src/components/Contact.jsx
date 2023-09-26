@@ -6,7 +6,7 @@ function Contact() {
   return (
     <div className='contacto'>
       <h2 className='titulo__contactanos'>Envianos un mensaje!</h2>
-      <div className='contacto-bg'></div>
+      <div className='contacto-bg'><div className='opacidad-contactos'></div></div>
       <form className='formulario'>
           <div className='formulario__campo'>
             <label className='formulario__label' htmlFor="nombre">Nombre</label>

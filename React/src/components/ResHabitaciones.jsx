@@ -8,7 +8,7 @@ export default function ResHabitaciones() {
 
     for (let i = 0; i < 8; i++) {
     elementosJSX.push(
-      <div className='habitacion'>
+      <div className='habitacion' key={i}>
         <img src={Habitacion} alt="" className='img__habitacion'/>
         <div className='habitacion__contenido'>
           <h3 className='habitacion__titulo'>Habitacion {i+1}</h3>

@@ -17,8 +17,8 @@ export default function Reservacion() {
                         <option value="1">1</option>
                     </select>
                 </div>
-                <div className='Rform__campo btn'> 
-                   <button className='btn-Buscar' id='boton'>Buscar</button>
+                <div className='Rform__campo Rbtn'> 
+                   <input className='Reserv_btn-Buscar' type="button" value={'Buscar'} />
                 </div>
             </form>
         </div>
