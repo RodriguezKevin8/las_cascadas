@@ -7,6 +7,7 @@ import Contact from "./components/Contact";
 import Reservacion from "./components/Reservacion";
 import ResHabitaciones from "./components/ResHabitaciones";
 import './App.css';
+import './css/variables.css';
 
 function App() {
   return (
