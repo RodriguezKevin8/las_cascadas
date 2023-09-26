@@ -6,7 +6,7 @@ import Image from 'react-bootstrap/Image';
 function About() {
   return (
     <div className="sobre-nosotros-container">
-      <div className="container sobre-nosotros-cards">
+      <div className="container sobre-nosotros-cards mediaFlex">
         <div className="card mb-3" style={{ maxWidth: '100%' }}>
           <div className="card-header">VISION</div>
           <div className="card-body">

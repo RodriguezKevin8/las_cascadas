@@ -1,5 +1,5 @@
 .sobre-nosotros-container {
- 
+  margin-top: 1rem;
   width: 100%;
   height: 800px;
   display: flex;
@@ -28,4 +28,21 @@
   max-width: 500px;
   margin: 0 auto 20px;
   display: block;
+}
+.mediaFlex{
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 768px) { 
+     .mediaFlex{
+      flex-direction: row;
+     }
+}
+@media (max-width: 600px) { 
+  .sobre-nosotros-container {
+    margin-top: 10rem;
+  }
+  .card h1 {
+    font-size: 3rem;
+  }
 }

@@ -67,12 +67,12 @@ const Home = () => {
               comodidad de tu habitación te permite disfrutar de ellas desde un nuevo ángulo.
               Las habitaciones con vista a las piscinas son una excelente opción para los huéspedes que buscan disfrutar de un ambiente tranquilo y relajante. Estas habitaciones suelen ser más espaciosas que las habitaciones estándar, y cuentan con grandes ventanales que ofrecen una vista panorámica de la piscina.
             </p>
+            <Link  className="noStyleLink" to={`/Reservacion`}>
             <button className="btn btn-primary">
-              <Link  className="noStyleLink" to={`/Reservacion`}>
-               Reservar
-              </Link>             
+             
+              Reservar           
             </button>
-
+            </Link>  
           </div>
           <div className="col-md-6">
             <img

@@ -61,6 +61,11 @@ function Navbar() {
                   Contactanos
                 </Link>
               </li>
+              <li className="nav-item ml-auto">
+                <Link className="nav-link" to={`/Reservacion`}>
+                  Reservaciones
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

@@ -6,7 +6,7 @@ export default function ResHabitaciones() {
 
     const elementosJSX = [];
 
-    for (let i = 0; i < 8; i++) {
+    for (let i = 0; i < 9; i++) {
     elementosJSX.push(
       <div className='habitacion' key={i}>
         <img src={Habitacion} alt="" className='img__habitacion'/>
