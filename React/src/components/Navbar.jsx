@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, Outlet } from "react-router-dom";
 import "../css/Navbar.css";
-import logoImage from "../images/logo.png";
+import logoImage from "../images/logito.svg";
 
 function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -31,7 +31,7 @@ function Navbar() {
       <nav className={navbarClasses}>
         <div className="container">
           <Link className="navbar-brand" to={`/home`}>
-            <img src={logoImage} alt="Logo" />
+            <img src={logoImage} alt="Logo" style={{ width: "100px" }} />
           </Link>
           <button
             className="navbar-toggler"
