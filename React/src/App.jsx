@@ -16,6 +16,7 @@ function App() {
           <Navbar />
          <div className="titulo">
          <Routes>
+             <Route path="/" element={<h1>Las cascadas</h1>}/>  
              <Route path="/home" element={<h1>Las cascadas</h1>}/>
              <Route path="/about" element={<h1>Sobre Nosotros</h1>}/>
              <Route path="/contact" element={<h1>Contactanos</h1>}/>
@@ -24,8 +25,9 @@ function App() {
          </div>
         </div>
       </div>
-     <div className="container">
+     <div className="">
      <Routes>
+        <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home/>} />
         <Route path="/about" element={<About/>} />
         <Route path="/contact" element={<Contact/>} />
@@ -36,4 +38,4 @@ function App() {
   );
 }
 
-export default App
+export default App

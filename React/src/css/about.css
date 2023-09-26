@@ -1,0 +1,31 @@
+.sobre-nosotros-container {
+ 
+  width: 100%;
+  height: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sobre-nosotros-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px; 
+  margin: 0 auto;
+  padding: 0 20px; 
+}
+
+.card {
+  background-color:  #016273;
+  color: white;
+  flex: 0 0 calc(50% - 20px); 
+  padding: 40px;
+  margin-bottom: 20px; 
+}
+
+
+.servicio-image {
+  max-width: 500px;
+  margin: 0 auto 20px;
+  display: block;
+}
