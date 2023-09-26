@@ -46,7 +46,7 @@
     gap: .5rem;
 }
 .btn__detalles{
-    background-color: var(--colorBoton);
+    background-color: var(--color3);
 }
 .btn__reservar{
     background-color: black;
