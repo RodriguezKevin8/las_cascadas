@@ -12,11 +12,11 @@ const Home = () => {
         <Row>
           <Col md={12}>
             <div id="main">
-              <div className="max-65">
+              <div className="max-65 centradotxt">
                 <div className="max-708">
-                  <h2 className="heading dark-text left">VEN Y DISFRUTA!</h2>
+                  <h2 className="heading dark-text left text-center">VEN Y DISFRUTA!</h2>
                 </div>
-                <p className="body dark-text center">
+                <p className="body dark-text center text-center">
                   Ubicados en Santa Ana, El Salvador. El parque cuenta con una variedad de atracciones acuáticas, incluyendo toboganes, piscinas y un río lento. También cuenta con un hotel adjunto que ofrece alojamiento para los huéspedes que desean pasar la noche.
                 </p>
               </div>
@@ -39,8 +39,6 @@ const Home = () => {
             </div>
             <p className="text-justify textoh seccion1">
               El parque cuenta con una variedad de toboganes para todas las edades, desde toboganes para niños hasta toboganes de alta velocidad. Algunos de los toboganes más populares incluyen el "Tobogán de la Muerte", que es un tobogán vertical de 120 pies de altura, y el "Tobogán de los Piratas", que es un tobogán de 60 pies de altura con efectos especiales.
-              <br />
-              <br />
               Las Cascadas es un destino popular para familias y grupos de amigos. El parque ofrece una variedad de atracciones acuáticas para todas las edades, así como alojamiento cómodo para aquellos que desean pasar la noche.
             </p>
           </Col>
@@ -72,7 +70,7 @@ const Home = () => {
              
               Reservar           
             </button>
-            </Link>  
+            </Link>   
           </div>
           <div className="col-md-6">
             <img

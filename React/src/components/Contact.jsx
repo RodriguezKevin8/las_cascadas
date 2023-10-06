@@ -1,4 +1,3 @@
-import Fondo from '../images/Contactanos.jpg';
 import '../css/Contact.css';
 
 

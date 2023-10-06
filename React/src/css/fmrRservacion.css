@@ -1,0 +1,84 @@
+.detalles{
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+@media (min-width: 768px) { 
+     .detalles{
+        flex-direction: row;
+        justify-content: center;
+     }
+}
+.detalles img {
+    max-width: 400px;
+    border-radius: 15px;
+}
+.info__detalle{
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+.detalles__info p{
+    font-weight: 400;
+}
+.detalles__info span {
+    font-weight: 700;
+}
+.frmReservacion{
+    margin: 0 auto;
+    padding: 3rem ;
+    width: 50%;
+}
+.frmReservacion__campo{
+    display: flex;
+    margin-bottom: 2rem;
+    gap: 2rem;
+    justify-content: center;
+   
+}
+.frmReservacion__label{
+    flex: 0 0 10%;
+    text-align: right;   
+}
+.frm__input{
+    flex: 1;
+    border-radius: 0.5rem;
+    border: 1px solid var(--color2);
+}
+@media (max-width: 767px) { 
+    .frmReservacion__campo{
+       flex-direction: column;
+       text-align: center;
+    }
+
+    .frmReservacion__label{
+       text-align: center;
+       margin-bottom: -2rem;
+    }
+    .frm__input{
+       padding-top: 0.5rem;
+       padding-bottom: 0.5rem;
+    }
+    .enviar{
+       margin-bottom: -3rem;
+    }
+    .frmReservacion{
+        margin: 0 auto;
+        padding: 3rem ;
+        width: 95%;
+    }
+}
+.especificaciones{
+    display: grid;
+    place-items: center;
+}
+.espc__detalle{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+.espc__detalle span{
+    font-weight: 700;
+}

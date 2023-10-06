@@ -1,7 +1,6 @@
 import React from 'react';
 import "../css/about.css"
-import foto1 from "../images/logo.png";
-import Image from 'react-bootstrap/Image';
+
 
 function About() {
   return (

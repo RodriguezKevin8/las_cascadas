@@ -14,7 +14,7 @@ export default function Reservacion() {
                 <div className='Rform__campo'> 
                     <label htmlFor="fecha" className='Rform__label'>Tipo de Habitacion</label>
                     <select name="" id="fecha" className='Rform__select select'>
-                        <option value="1">1</option>
+                        {/* <option value="1">1</option> */}
                     </select>
                 </div>
                 <div className='Rform__campo Rbtn'> 

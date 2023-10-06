@@ -70,7 +70,7 @@ function Navbar() {
           </div>
         </div>
       </nav>
-      <Outlet />
+      <Outlet/>
     </div>
   );
 }
