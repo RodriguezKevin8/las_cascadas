@@ -13,6 +13,7 @@ import './css/variables.css';
 import Admin from "./components/Admin";
 import FmrAgregar from "./components/FmrAgregar";
 import FmrEditar from "./components/FmrEditar";
+import Login from "./components/Login";
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
              <Route path="/Administrar" element={<h1>Administrar Habitaciones</h1>}/>
              <Route path="/FmrAgregar" element={<h1>Agregar Habitacion</h1>}/>
              <Route path="/FmrEditar" element={<h1>Editar Habitacion</h1>}/>
+             
           </Routes>
          </div>
         </div>
@@ -47,6 +49,7 @@ function App() {
         <Route path="/Administrar" element={<Admin/>}/>
         <Route path="/FmrAgregar" element={<FmrAgregar/>}/>
         <Route path="/FmrEditar" element={<FmrEditar/>}/>
+        <Route path="/Admin749293" element={<Login/>}/>
       </Routes>
      </div>
      <Footer/>
