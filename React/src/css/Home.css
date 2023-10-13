@@ -5,6 +5,9 @@ body {
   margin: 0;
   padding: 0;
 }
+.img-fluid{
+  height: 100%;
+}
 
 #main {
   width: 100%;
@@ -58,6 +61,17 @@ body {
 .seccion1 {
   padding-top: 20px;
 }
+.parrafo__seccion1{
+  margin-right: 2rem;
+  text-align: justify;
+}
+
+@media (max-width: 720px) { 
+  .centrado{
+    padding-left: 30px;
+   }
+}
+
 .fondoh {
   background-color: #016273;
 }

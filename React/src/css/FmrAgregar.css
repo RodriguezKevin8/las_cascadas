@@ -1,0 +1,89 @@
+.fmr_AgregarImg{
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+.fmr_AgregarImg input{
+    margin: 0.3rem auto;
+}
+.cont{
+    margin-top: 1rem;
+    margin: 0 auto;
+}
+.grid{
+    display: grid;
+    
+    max-width: 1000px;
+    margin: 0 auto;
+}
+@media (max-width: 996px) { 
+    .img_agregadas{
+        grid-row: 2 / 3;
+     } 
+} 
+@media (min-width: 996px) { 
+     .grid{
+        grid-template-columns: repeat(2, 1fr);
+     } 
+     
+}
+.cont{
+    margin: 0 auto;
+    background-color: white;
+    padding: 3rem ;
+    width: 95%;
+}
+.fmr__Agregar{
+    display: flex;
+    margin-bottom: 2rem;
+    gap: 2rem;
+    justify-content: center;
+    
+}
+.img_agregadas{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 0 auto;
+}
+.img_agregadas img{
+    max-width: 250px;
+}
+.fmr__Agregar label{
+    flex: 0 0 10%;
+    text-align: right;
+
+}
+
+@media (max-width: 767px) { 
+    .fmr__Agregar{
+       flex-direction: column;
+       text-align: center;
+    }
+
+    .fmr__Agregar label{
+       text-align: center;
+       margin-bottom: -2rem;
+    }
+    .fmr__Agregar input{
+       padding-top: 0.5rem;
+       padding-bottom: 0.5rem;
+    }
+    .enviar{
+       margin-bottom: -3rem;
+    }
+}
+.input{
+    flex: 1;
+    border-radius: 0.5rem;
+    border: 1px solid var(--color2);
+}
+.boton{
+    margin-top: 2rem;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 10px;
+    border: none;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+}

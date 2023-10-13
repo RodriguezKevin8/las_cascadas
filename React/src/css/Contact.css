@@ -72,6 +72,9 @@
     text-transform: uppercase;
     padding: 0.5rem 1rem;
 }
+.btnAgregar{
+    background-color: var(--color3);
+}
 .enviar{    
     background-color: var(--colorBoton);
 }

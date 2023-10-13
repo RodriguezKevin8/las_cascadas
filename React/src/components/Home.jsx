@@ -34,13 +34,15 @@ const Home = () => {
             />
           </Col>
           <Col sm={12} md={6}>
-            <div className="text-center mb-3 seccion1">
-              <h2 className="textoh">Las Cascadas</h2>
+            <div className="centrado">
+              <div className="text-center mb-3 seccion1">
+                <h2 className="textoh">Las Cascadas</h2>
+              </div>
+              <p className="text-justify textoh seccion1 parrafo__seccion1">
+                El parque cuenta con una variedad de toboganes para todas las edades, desde toboganes para niños hasta toboganes de alta velocidad. Algunos de los toboganes más populares incluyen el "Tobogán de la Muerte", que es un tobogán vertical de 120 pies de altura, y el "Tobogán de los Piratas", que es un tobogán de 60 pies de altura con efectos especiales.
+                Las Cascadas es un destino popular para familias y grupos de amigos. El parque ofrece una variedad de atracciones acuáticas para todas las edades, así como alojamiento cómodo para aquellos que desean pasar la noche.
+              </p>
             </div>
-            <p className="text-justify textoh seccion1">
-              El parque cuenta con una variedad de toboganes para todas las edades, desde toboganes para niños hasta toboganes de alta velocidad. Algunos de los toboganes más populares incluyen el "Tobogán de la Muerte", que es un tobogán vertical de 120 pies de altura, y el "Tobogán de los Piratas", que es un tobogán de 60 pies de altura con efectos especiales.
-              Las Cascadas es un destino popular para familias y grupos de amigos. El parque ofrece una variedad de atracciones acuáticas para todas las edades, así como alojamiento cómodo para aquellos que desean pasar la noche.
-            </p>
           </Col>
         </Row>
       </div>
