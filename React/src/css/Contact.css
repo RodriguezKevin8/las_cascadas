@@ -10,13 +10,14 @@
 .opacidad-contactos{
     display: absolute;
     height: 40rem;
-    background-color: rgb(0 0 0 / 0.1);
+    /* background-color: rgb(0 0 0 / 0.1); */
 }
 
 .contacto-bg{
     display: relative;
     margin-top: 1rem;
-    background-image: url('../images/Contactanos.jpg');
+    /* background-image: url('../images/Contactanos.jpg'); */
+    background-color: #dfedee;
     height: 40rem;
     background-size: cover;
     background-repeat: no-repeat;

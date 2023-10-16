@@ -28,7 +28,7 @@ function App() {
              <Route path="/home" element={<h1>Las cascadas</h1>}/>
              <Route path="/about" element={<h1>Sobre Nosotros</h1>}/>
              <Route path="/contact" element={<h1>Contactanos</h1>}/>
-             <Route path="/Reservacion" element={<Reservacion/>}/> 
+             {/* <Route path="/Reservacion" element={<Reservacion/>}/>  */}
              <Route path="/reservarContenedor" element={<h1>Formulario de Reservacion</h1>}/>
              <Route path="/Administrar" element={<h1>Administrar Habitaciones</h1>}/>
              <Route path="/FmrAgregar" element={<h1>Agregar Habitacion</h1>}/>

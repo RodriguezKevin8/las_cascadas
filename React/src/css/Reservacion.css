@@ -1,5 +1,18 @@
 .h1{
     margin-top: -1rem;
+    text-align: center;
+    color: white;
+    font-family: var(--fuente);
+}
+.filtros{
+    margin-top: -20rem;
+    padding-bottom: 7rem;
+    z-index: 2;
+}
+@media (min-width: 996px) { 
+     .filtros{
+        padding-bottom: 15rem;
+     }
 }
 .Reserv_btn-Buscar{
     background-color: var(--color2);
