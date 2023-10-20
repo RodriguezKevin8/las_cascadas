@@ -8,13 +8,15 @@ import Reservacion from "./components/Reservacion";
 import ResHabitaciones from "./components/ResHabitaciones";
 import Footer from "./components/Footer";
 import FmrReservacion from "./components/fmrReservacion";
-import './App.css';
-import './css/variables.css';
+import "./App.css";
+import "./css/variables.css";
 import Admin from "./components/Admin";
 import FmrAgregar from "./components/FmrAgregar";
 import FmrEditar from "./components/FmrEditar";
 import Login from "./components/Login";
-
+import Hab from "./components/Hab";
+import Comentario from "./components/Cometario";
+import ReservacionesComponent from "./components/ReservacionesComponent";
 
 function App() {
   return (
@@ -22,39 +24,47 @@ function App() {
       <div className="fondo">
         <div className="opacidad">
           <Navbar />
-         <div className="titulo">
-         <Routes>
-             <Route path="/" element={<h1>Las cascadas</h1>}/>  
-             <Route path="/home" element={<h1>Las cascadas</h1>}/>
-             <Route path="/about" element={<h1>Sobre Nosotros</h1>}/>
-             <Route path="/contact" element={<h1>Contactanos</h1>}/>
-             <Route path="/Reservacion" element={<Reservacion/>}/> 
-             <Route path="/reservarContenedor" element={<h1>Formulario de Reservacion</h1>}/>
-             <Route path="/Administrar" element={<h1>Administrar Habitaciones</h1>}/>
-             <Route path="/FmrAgregar" element={<h1>Agregar Habitacion</h1>}/>
-             <Route path="/FmrEditar" element={<h1>Editar Habitacion</h1>}/>
-             
-          </Routes>
-         </div>
+          <div className="titulo">
+            <Routes>
+              <Route path="/" element={<h1>Las cascadas</h1>} />
+              <Route path="/home" element={<h1>Las cascadas</h1>} />
+              <Route path="/about" element={<h1>Sobre Nosotros</h1>} />
+              <Route path="/contact" element={<h1>Contactanos</h1>} />
+              <Route path="/comentarios" element={<h1>Comentarios</h1>} />
+              {/* <Route path="/Reservacion" element={<Reservacion/>}/>  */}
+              <Route
+                path="/reservarContenedor"
+                element={<h1>Formulario de Reservacion</h1>}
+              />
+              <Route
+                path="/Administrar"
+                element={<h1>Administrar Habitaciones</h1>}
+              />
+              <Route path="/FmrAgregar" element={<h1>Agregar Habitacion</h1>} />
+              <Route path="/FmrEditar" element={<h1>Editar Habitacion</h1>} />
+            </Routes>
+          </div>
         </div>
       </div>
-     <div className="">
-     <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/home" element={<Home/>} />
-        <Route path="/about" element={<About/>} />
-        <Route path="/contact" element={<Contact/>} />
-        <Route path="/Reservacion" element={<ResHabitaciones/>}/>        
-        <Route path="/reservarContenedor" element={<FmrReservacion/>}/>
-        <Route path="/Administrar" element={<Admin/>}/>
-        <Route path="/FmrAgregar" element={<FmrAgregar/>}/>
-        <Route path="/FmrEditar" element={<FmrEditar/>}/>
-        <Route path="/Admin749293" element={<Login/>}/>
-      </Routes>
-     </div>
-     <Footer/>
+      <div className="">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/Reservacion" element={<ResHabitaciones />} />
+          <Route path="/reservarContenedor" element={<FmrReservacion />} />
+          <Route path="/Administrar" element={<Admin />} />
+          <Route path="/FmrAgregar" element={<FmrAgregar />} />
+          <Route path="/FmrEditar/:id" element={<FmrEditar />} />
+          <Route path="/Admin749293" element={<Login />} />
+          <Route path="/prueba" element={<Hab />} />
+          <Route path="/res" element={<ReservacionesComponent />} />
+        </Routes>
+      </div>
+      <Footer />
     </BrowserRouter>
   );
 }
 
-export default App
+export default App;

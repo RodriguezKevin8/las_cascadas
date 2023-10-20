@@ -66,11 +66,16 @@ function Navbar() {
                   Reservaciones
                 </Link>
               </li>
+              <li className="nav-item ml-auto">
+                <Link className="nav-link" to={`/Cometarios`}>
+                  Comentanos
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
       </nav>
-      <Outlet/>
+      <Outlet />
     </div>
   );
 }
