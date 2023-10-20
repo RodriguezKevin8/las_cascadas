@@ -95,6 +95,7 @@ function FmrAgregar() {
       if (response.data.success) {
         console.log("Imágenes subidas con éxito");
         setSelectedImages([]);
+        fetchfotos(id);
       }
     } catch (error) {
       console.error(error);
@@ -144,6 +145,7 @@ function FmrAgregar() {
                 value={data.tipo}
                 onChange={handleChange}
               >
+                <option value="individual">seleccionar</option>
                 <option value="individual">Individual</option>
                 <option value="doble">Doble</option>
                 <option value="suite">Suite</option>
