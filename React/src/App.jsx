@@ -17,6 +17,7 @@ import Login from "./components/Login";
 import Hab from "./components/Hab";
 import Comentario from "./components/Cometario";
 import ReservacionesComponent from "./components/ReservacionesComponent";
+import Verificar from "./components/Verificar";
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
               />
               <Route path="/FmrAgregar" element={<h1>Agregar Habitacion</h1>} />
               <Route path="/FmrEditar" element={<h1>Editar Habitacion</h1>} />
+              <Route path="/Verificar" element={<h1>Verificar Habitacion</h1>}/>
             </Routes>
           </div>
         </div>
@@ -60,6 +62,7 @@ function App() {
           <Route path="/Admin749293" element={<Login />} />
           <Route path="/prueba" element={<Hab />} />
           <Route path="/res" element={<ReservacionesComponent />} />
+          <Route path="/Verificar" element={<Verificar/>}/>
         </Routes>
       </div>
       <Footer />
