@@ -1,0 +1,51 @@
+.contenedor {
+  max-width: 720px;
+
+  width: 95%;
+  margin: 2rem auto;
+}
+
+.ingresar {
+  display: grid;
+}
+@media (min-width: 720px) {
+  .ingresar {
+    grid-template-columns: 4fr 1fr;
+    gap: 1rem;
+  }
+  .ingresar a p {
+    padding: 0.6rem 2rem;
+    padding-left: 2.9rem;
+    margin: 0 auto;
+    background-color: var(--color2);
+    color: white;
+  }
+}
+@media (max-width: 719px) {
+  .ingresar a {
+    background-color: var(--color2);
+    color: white;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  .ingresar a p {
+    margin: 0 45%;
+  }
+}
+.ingresar a p:hover {
+  background-color: var(--color3);
+}
+#contenido {
+  margin-top: 3rem;
+}
+.textoError {
+  text-align: center;
+}
+.VerHabitacion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.listaVerificacion {
+  list-style: none;
+}

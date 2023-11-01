@@ -71,6 +71,11 @@ function Navbar() {
                   Comentanos
                 </Link>
               </li>
+              <li className="nav-item ml-auto">
+                <Link className="nav-link" to={`/Verificar`}>
+                  Verificar Reserva
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
