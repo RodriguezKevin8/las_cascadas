@@ -8,6 +8,7 @@ import "../css/Reservacion.css";
 export default function ResHabitaciones() {
   const [habitaciones, setHabitaciones] = useState([]);
   const [tipoFiltro, setTipoFiltro] = useState("todos");
+  const [selectedDate, setSelectedDate] = useState("");
 
   useEffect(() => {
     fetch("http://localhost:3000/api/detalleshabitacion")
@@ -18,6 +19,20 @@ export default function ResHabitaciones() {
 
   const handleChange = (e) => {
     setTipoFiltro(e.target.value);
+  };
+
+  const handleDateChange = (e) => {
+    setSelectedDate(e.target.value);
+  };
+
+  const handleBuscarClick = () => {
+    const today = new Date();
+    const selected = new Date(selectedDate);
+
+    if (selected < today) {
+      alert("La fecha seleccionada no puede ser anterior a la fecha actual.");
+      return;
+    }
   };
 
   const habitacionesFiltradas = habitaciones.filter((habitacion) => {
@@ -39,7 +54,12 @@ export default function ResHabitaciones() {
               <label htmlFor="fecha" className="Rform__label">
                 Fecha
               </label>
-              <input type="date" className="Rform__select" />
+              <input
+                type="date"
+                className="Rform__select"
+                value={selectedDate}
+                onChange={handleDateChange}
+              />
             </div>
             <div className="Rform__campo">
               <label htmlFor="fecha" className="Rform__label">
@@ -57,6 +77,7 @@ export default function ResHabitaciones() {
                 className="Reserv_btn-Buscar"
                 type="button"
                 value={"Buscar"}
+                onClick={handleBuscarClick}
               />
             </div>
           </form>
@@ -72,9 +93,10 @@ export default function ResHabitaciones() {
                   alt=""
                   className="img__habitacion"
                 />
+
                 <div className="habitacion__contenido">
                   <h3 className="habitacion__titulo">{habitacion.titulo}</h3>
-                  <p className="habitacion__texto">{habitacion.descripcion}</p>
+
                   <div className="habitacion__botones">
                     <p>Mostrar Detalles</p>
                   </div>
@@ -82,7 +104,7 @@ export default function ResHabitaciones() {
               </div>
               <div className="atras">
                 <h3>Detalle</h3>
-                <p>{habitacion.detalle}</p>
+                <p style={{ textAlign: "justify" }}>{habitacion.descripcion}</p>
                 <Link to={"/reservarContenedor"}>
                   <button className="boton btn__reservar">Reservar</button>
                 </Link>

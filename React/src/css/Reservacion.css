@@ -64,3 +64,6 @@
     grid-column: 3/3;
   }
 }
+.img__habitacion {
+  width: 300px;
+}

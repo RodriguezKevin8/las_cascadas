@@ -59,7 +59,12 @@ function FmrAgregar() {
     try {
       const response = await axios.post(
         "http://localhost:3000/api/insertHabitacion",
-        data
+        {
+          ...data,
+          numero: parseInt(data.numero),
+          capacidad: parseInt(data.capacidad),
+          precio: parseFloat(data.precio),
+        }
       );
       if (response.status === 200) {
         const idHabitacion = response.data.id_habitacion;
@@ -68,6 +73,7 @@ function FmrAgregar() {
         await handleSubmit(idHabitacion);
 
         reset();
+        alert("Habitacion generada con exito.");
       }
     } catch (error) {
       if (error.response && error.response.status === 401) {
@@ -183,6 +189,7 @@ function FmrAgregar() {
               className="input"
               name="descripcion"
               value={data.descripcion}
+              maxLength={300}
               onChange={handleChange}
             ></textarea>
           </div>

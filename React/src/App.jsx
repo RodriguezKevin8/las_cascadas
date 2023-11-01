@@ -17,6 +17,8 @@ import Login from "./components/Login";
 import Hab from "./components/Hab";
 import Comentario from "./components/Cometario";
 import ReservacionesComponent from "./components/ReservacionesComponent";
+import ProtectedRoute from "./Auth/ProtectedRoute";
+import CalendarioReservas from "./components/CalendarioReservas";
 
 function App() {
   return (
@@ -26,6 +28,17 @@ function App() {
           <Navbar />
           <div className="titulo">
             <Routes>
+              <Route element={<ProtectedRoute />}>
+                <Route
+                  path="/Administrar"
+                  element={<h1>Administrar Habitaciones</h1>}
+                />
+                <Route
+                  path="/FmrAgregar"
+                  element={<h1>Agregar Habitacion</h1>}
+                />
+                <Route path="/FmrEditar" element={<h1>Editar Habitacion</h1>} />
+              </Route>
               <Route path="/" element={<h1>Las cascadas</h1>} />
               <Route path="/home" element={<h1>Las cascadas</h1>} />
               <Route path="/about" element={<h1>Sobre Nosotros</h1>} />
@@ -36,12 +49,6 @@ function App() {
                 path="/reservarContenedor"
                 element={<h1>Formulario de Reservacion</h1>}
               />
-              <Route
-                path="/Administrar"
-                element={<h1>Administrar Habitaciones</h1>}
-              />
-              <Route path="/FmrAgregar" element={<h1>Agregar Habitacion</h1>} />
-              <Route path="/FmrEditar" element={<h1>Editar Habitacion</h1>} />
             </Routes>
           </div>
         </div>
@@ -54,12 +61,16 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/Reservacion" element={<ResHabitaciones />} />
           <Route path="/reservarContenedor" element={<FmrReservacion />} />
-          <Route path="/Administrar" element={<Admin />} />
-          <Route path="/FmrAgregar" element={<FmrAgregar />} />
-          <Route path="/FmrEditar/:id" element={<FmrEditar />} />
           <Route path="/Admin749293" element={<Login />} />
-          <Route path="/prueba" element={<Hab />} />
-          <Route path="/res" element={<ReservacionesComponent />} />
+          <Route path="/cal" element={<CalendarioReservas />} />
+
+          <Route element={<ProtectedRoute />}>
+            <Route path="/Administrar" element={<Admin />} />
+            <Route path="/FmrAgregar" element={<FmrAgregar />} />
+            <Route path="/FmrEditar/:id" element={<FmrEditar />} />
+            <Route path="/prueba" element={<Hab />} />
+            <Route path="/res" element={<ReservacionesComponent />} />
+          </Route>
         </Routes>
       </div>
       <Footer />

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Habitacion from "../images/habitacion.avif";
 import "../css/Admin.css";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 function Admin() {
   const [habitaciones, setHabitaciones] = useState([]);
@@ -13,13 +14,33 @@ function Admin() {
       .catch((error) => console.error("Error:", error));
   }, []);
 
-  function Alerta(e) {
-    if (false) {
-      alert("La habitacion no se puede eliminar porque esta ocupada");
-    } else {
-      confirm("¿Desea eliminar la habitacion?");
+  const handleActualizarDisponibilidad = async (id, disponibilidad) => {
+    try {
+      const nuevoEstado = disponibilidad === "Activo" ? "No activo" : "Activo";
+      const response = await axios.put(
+        `http://localhost:3000/api/disponibilidad/${id}`,
+        {
+          disponibilidad: nuevoEstado,
+        }
+      );
+
+      if (response.status === 200) {
+        const mensaje = `Acción realizada, el nuevo estado es: ${nuevoEstado}`;
+        alert(mensaje);
+        setHabitaciones((prevState) =>
+          prevState.map((habitacion) =>
+            habitacion.id_habitacion === id
+              ? { ...habitacion, disponibilidad: nuevoEstado }
+              : habitacion
+          )
+        );
+      } else {
+        console.error("Error al actualizar disponibilidad:", response);
+      }
+    } catch (error) {
+      console.error("Error al actualizar disponibilidad:", error);
     }
-  }
+  };
 
   return (
     <div className="flex mt-5">
@@ -28,7 +49,6 @@ function Admin() {
       </Link>
       <div className="habitaciones">
         {habitaciones.map((habitacion, index) => (
-          
           <div className="habitacion" key={index}>
             <img
               src={`http://localhost:3000/api/images/${habitacion.fotos[0].foto1}`}
@@ -39,20 +59,22 @@ function Admin() {
               <h3 className="habitacion__titulo">{`Habitacion ${
                 index + 1
               }`}</h3>
-              <p className="habitacion__texto border_bottom">
-                {habitacion.descripcion}
-              </p>
             </div>
             <div className="Admin__botones">
-
-              
               <Link to={`/FmrEditar/${habitacion.id_habitacion}`}>
                 <a>
                   <i className="bi bi-pencil-square"></i>
                 </a>
               </Link>
-              <a onClick={Alerta}>
-                <i className="bi bi-trash3-fill"></i>
+              <a
+                onClick={() =>
+                  handleActualizarDisponibilidad(
+                    habitacion.id_habitacion,
+                    habitacion.disponibilidad
+                  )
+                }
+              >
+                <i className="bi bi-arrow-clockwise"></i>
               </a>
             </div>
           </div>

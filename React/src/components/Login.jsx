@@ -39,14 +39,20 @@ function Login() {
         "http://localhost:3000/api/login",
         data
       );
+
       if (response.status === 200) {
-        console.log(response.status);
-        navigate(`/Administrar`);
-        reset();
+        const token = response.data.token;
+        if (token) {
+          localStorage.setItem("token", token);
+          navigate(`/Administrar`);
+          reset();
+        } else {
+          alert("Error al obtener el token del servidor.");
+        }
       }
     } catch (error) {
-      if (error.response.status === 401) {
-        alert("Error con la informacion, favor de revisarla.");
+      if (error.response && error.response.status === 401) {
+        alert("Error con la información, favor de revisarla.");
       }
     }
   };

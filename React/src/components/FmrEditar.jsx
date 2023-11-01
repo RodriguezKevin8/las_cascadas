@@ -10,7 +10,6 @@ function FmrEditar() {
   const [selectedImages, setSelectedImages] = useState([]);
   const [fotos, setFotos] = useState([]);
   const [data, setData] = useState({
-    disponibilidad: "",
     precio: "",
     descripcion: "",
   });
@@ -26,7 +25,7 @@ function FmrEditar() {
       });
   };
   useEffect(() => {
-    fetchfotos();
+    fetchfotos(id);
   }, []);
 
   const handleChange = (e) => {
@@ -44,7 +43,6 @@ function FmrEditar() {
 
   const reset = () => {
     setData({
-      disponibilidad: "",
       precio: "",
       descripcion: "",
     });
@@ -54,7 +52,6 @@ function FmrEditar() {
     e.preventDefault();
     try {
       await axios.put(`http://localhost:3000/api/habitacion/${id}`, data);
-      await handleSubmit(id);
       reset();
     } catch (error) {
       if (error.response && error.response.status === 401) {
@@ -94,7 +91,7 @@ function FmrEditar() {
         <div className="img_agregadas">
           <h3>Imagenes Agregadas</h3>
         </div>
-        <form onSubmit={datas}>
+        <form onSubmit={handleSubmit(id)}>
           <div className="fmr_AgregarImg">
             <label for="imagen">Selecciona una imagen:</label>
             <form>
@@ -107,22 +104,17 @@ function FmrEditar() {
               />
             </form>
           </div>
-          <div className="fmr__Agregar">
-            <div className="box">
-              <label>Estado:</label>
-              <select
-                id="tipo"
-                className="input"
-                name="disponibilidad"
-                value={data.disponibilidad}
-                onChange={handleChange}
-              >
-                <option value="activo">seleccionar</option>
-                <option value="Activo">Activa</option>
-                <option value="No activa">No activa</option>
-              </select>
-            </div>
+          <div className="">
+            <input
+              className="boton btnAgregar"
+              type="submit"
+              value={"Editar"}
+            />
           </div>
+        </form>
+      </div>
+      <div className="grid">
+        <form onSubmit={datas}>
           <div className="fmr__Agregar">
             <label>Descripcion:</label>
             <textarea

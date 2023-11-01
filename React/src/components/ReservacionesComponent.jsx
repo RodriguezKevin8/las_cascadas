@@ -11,8 +11,8 @@ function ReservacionesComponent() {
     id_habitacion: 49,
     fecha_entrada: "",
     fecha_salida: "",
-    estado: "",
-    comprobante: "ksksks",
+    estado: "Activo",
+    comprobante: Math.floor(100000 + Math.random() * 900000).toString(),
     telefono: "",
   });
 
@@ -101,24 +101,6 @@ function ReservacionesComponent() {
             type="date"
             name="fecha_salida"
             value={reservacion.fecha_salida}
-            onChange={handleInputChange}
-          />
-        </label>
-        <label>
-          Estado:
-          <input
-            type="text"
-            name="estado"
-            value={reservacion.estado}
-            onChange={handleInputChange}
-          />
-        </label>
-        <label>
-          Comprobante:
-          <input
-            type="text"
-            name="comprobante"
-            value={reservacion.comprobante}
             onChange={handleInputChange}
           />
         </label>
