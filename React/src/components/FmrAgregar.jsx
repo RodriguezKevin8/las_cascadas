@@ -3,6 +3,7 @@ import "../css/FmrAgregar.css";
 import Habitacion from "../images/habitacion.avif";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function FmrAgregar() {
   const [selectedImages, setSelectedImages] = useState([]);
@@ -55,25 +56,31 @@ function FmrAgregar() {
     setSelectedImages(files);
   };
   const datas = async (e) => {
+    const token = localStorage.getItem("token");
+    const navigate = useNavigate();
     e.preventDefault();
     try {
-      const response = await axios.post(
-        "http://localhost:3000/api/insertHabitacion",
-        {
-          ...data,
-          numero: parseInt(data.numero),
-          capacidad: parseInt(data.capacidad),
-          precio: parseFloat(data.precio),
+      if (token) {
+        const response = await axios.post(
+          "http://localhost:3000/api/insertHabitacion",
+          {
+            ...data,
+            numero: parseInt(data.numero),
+            capacidad: parseInt(data.capacidad),
+            precio: parseFloat(data.precio),
+          }
+        );
+        if (response.status === 200) {
+          const idHabitacion = response.data.id_habitacion;
+          console.log("Guardada con éxito. ID de habitación:", idHabitacion);
+
+          await handleSubmit(idHabitacion);
+
+          reset();
+          alert("Habitacion generada con exito.");
         }
-      );
-      if (response.status === 200) {
-        const idHabitacion = response.data.id_habitacion;
-        console.log("Guardada con éxito. ID de habitación:", idHabitacion);
-
-        await handleSubmit(idHabitacion);
-
-        reset();
-        alert("Habitacion generada con exito.");
+      } else {
+        navigate("/admin749293");
       }
     } catch (error) {
       if (error.response && error.response.status === 401) {

@@ -1,12 +1,18 @@
 import React, { useState, useEffect } from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import "../css/Navbar.css";
 import logoImage from "../images/logito.svg";
 
 function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const navigate = useNavigate();
 
-  // Función que maneja el cambio de clase al hacer scroll
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    navigate("/admin749293");
+    window.location.reload();
+  };
+
   const handleScroll = () => {
     if (window.scrollY > 0) {
       setIsScrolled(true);
@@ -75,6 +81,9 @@ function Navbar() {
                 <Link className="nav-link" to={`/Verificar`}>
                   Verificar Reserva
                 </Link>
+              </li>
+              <li className="nav-item ml-auto">
+                <button onClick={handleLogout}>Cerrar Sesión</button>
               </li>
             </ul>
           </div>
