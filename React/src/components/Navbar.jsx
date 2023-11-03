@@ -6,6 +6,7 @@ import logoImage from "../images/logito.svg";
 function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const navigate = useNavigate();
+  const token = localStorage.getItem("token");
 
   const handleLogout = () => {
     localStorage.removeItem("token");
@@ -82,9 +83,11 @@ function Navbar() {
                   Verificar Reserva
                 </Link>
               </li>
-              <li className="nav-item ml-auto">
-                <button onClick={handleLogout}>Cerrar Sesión</button>
-              </li>
+              {token && (
+                <li className="nav-item ml-auto">
+                  <button onClick={handleLogout}>Cerrar Sesión</button>
+                </li>
+              )}
             </ul>
           </div>
         </div>
