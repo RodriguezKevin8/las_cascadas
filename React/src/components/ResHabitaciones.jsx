@@ -52,17 +52,6 @@ export default function ResHabitaciones() {
           <form className="Rform">
             <div className="Rform__campo">
               <label htmlFor="fecha" className="Rform__label">
-                Fecha
-              </label>
-              <input
-                type="date"
-                className="Rform__select"
-                value={selectedDate}
-                onChange={handleDateChange}
-              />
-            </div>
-            <div className="Rform__campo">
-              <label htmlFor="fecha" className="Rform__label">
                 Tipo de Habitacion
               </label>
               <select value={tipoFiltro} onChange={handleChange}>
@@ -105,7 +94,7 @@ export default function ResHabitaciones() {
               <div className="atras">
                 <h3>Detalle</h3>
                 <p style={{ textAlign: "justify" }}>{habitacion.descripcion}</p>
-                <Link to={"/reservarContenedor"}>
+                <Link to={`/reservarContenedor/${habitacion.id_habitacion}`}>
                   <button className="boton btn__reservar">Reservar</button>
                 </Link>
               </div>

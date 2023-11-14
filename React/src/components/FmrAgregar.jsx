@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 function FmrAgregar() {
   const [selectedImages, setSelectedImages] = useState([]);
   const [fotos, setFotos] = useState([]);
+  const navigate = useNavigate();
 
   const fetchfotos = (id) => {
     axios
@@ -16,9 +17,10 @@ function FmrAgregar() {
         setFotos(response.data);
       })
       .catch((error) => {
-        console.error("Error al obtener libros:", error);
+        console.error("Error al obtener fotos:", error);
       });
   };
+
   useEffect(() => {
     fetchfotos();
   }, []);
@@ -31,6 +33,7 @@ function FmrAgregar() {
     precio: "",
     disponibilidad: "",
   });
+
   const handleChange = (e) => {
     const { name, value } = e.target;
 
@@ -55,10 +58,11 @@ function FmrAgregar() {
     const files = e.target.files;
     setSelectedImages(files);
   };
+
   const datas = async (e) => {
-    const token = localStorage.getItem("token");
-    const navigate = useNavigate();
     e.preventDefault();
+    const token = localStorage.getItem("token");
+
     try {
       if (token) {
         const response = await axios.post(
@@ -70,6 +74,7 @@ function FmrAgregar() {
             precio: parseFloat(data.precio),
           }
         );
+
         if (response.status === 200) {
           const idHabitacion = response.data.id_habitacion;
           console.log("Guardada con éxito. ID de habitación:", idHabitacion);
@@ -84,10 +89,10 @@ function FmrAgregar() {
       }
     } catch (error) {
       if (error.response && error.response.status === 401) {
-        alert("Error con la informacion, favor de revisarla.");
+        alert("Error con la información, favor de revisarla.");
       } else {
         alert("Ocurrió un error. Por favor, intenta de nuevo más tarde.");
-        console.log(error);
+        console.error(error);
       }
     }
   };
@@ -211,7 +216,7 @@ function FmrAgregar() {
             />
           </div>
           <br />
-          <form onSubmit={handleSubmit}>
+          <div className="fmr__Agregar">
             <input
               type="file"
               name="images"
@@ -219,7 +224,7 @@ function FmrAgregar() {
               multiple
               onChange={handleFileChange}
             />
-          </form>
+          </div>
           <br />
           <div className="fmr__Agregar">
             <button className="boton btnAgregar" type="submit">

@@ -19,6 +19,7 @@ import Comentario from "./components/Cometario";
 import ReservacionesComponent from "./components/ReservacionesComponent";
 import ProtectedRoute from "./Auth/ProtectedRoute";
 import CalendarioReservas from "./components/CalendarioReservas";
+import Verificar from "./components/Verificar";
 
 function App() {
   return (
@@ -60,16 +61,20 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/Reservacion" element={<ResHabitaciones />} />
-          <Route path="/reservarContenedor" element={<FmrReservacion />} />
+          <Route
+            path="/reservarContenedor/:id"
+            element={<ReservacionesComponent />}
+          />
           <Route path="/Admin749293" element={<Login />} />
           <Route path="/cal" element={<CalendarioReservas />} />
+          <Route path="/verificar" element={<Verificar />} />
 
           <Route element={<ProtectedRoute />}>
             <Route path="/Administrar" element={<Admin />} />
             <Route path="/FmrAgregar" element={<FmrAgregar />} />
             <Route path="/FmrEditar/:id" element={<FmrEditar />} />
             <Route path="/prueba" element={<Hab />} />
-            <Route path="/res" element={<ReservacionesComponent />} />
+            <Route path="/res/:id" element={<ReservacionesComponent />} />
           </Route>
         </Routes>
       </div>
