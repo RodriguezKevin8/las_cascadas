@@ -1,8 +1,6 @@
 import "../css/FmrAgregar.css";
-import React from "react";
-import Habitacion from "../images/habitacion.avif";
-import { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 
 function FmrEditar() {
@@ -13,27 +11,42 @@ function FmrEditar() {
     precio: "",
     descripcion: "",
   });
-
   const fetchfotos = (id) => {
     axios
-      .get(`http://localhost:3000/api/imagesdata/${id}`, fotos)
+      .get(`http://localhost:3000/api/imagesdata/${id}`)
       .then((response) => {
         setFotos(response.data);
       })
       .catch((error) => {
-        console.error("Error al obtener libros:", error);
+        console.error("Error al obtener fotos:", error);
       });
   };
+
+  const obtenerDetallesHabitacion = async () => {
+    try {
+      const response = await axios.get(
+        `http://localhost:3000/api/detalleshabitacion1/${id}`
+      );
+      setData({
+        precio: response.data.precio || "",
+        descripcion: response.data.descripcion || "",
+      });
+    } catch (error) {
+      console.error("Error al obtener detalles de la habitación:", error);
+    }
+  };
+
   useEffect(() => {
     fetchfotos(id);
-  }, []);
+    obtenerDetallesHabitacion();
+  }, [id]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setData({
-      ...data,
+    setData((prevData) => ({
+      ...prevData,
       [name]: value,
-    });
+    }));
   };
 
   const handleFileChange = (e) => {
@@ -53,6 +66,7 @@ function FmrEditar() {
     try {
       await axios.put(`http://localhost:3000/api/habitacion/${id}`, data);
       reset();
+      alert("Habitacion editada correctamente.");
     } catch (error) {
       if (error.response && error.response.status === 401) {
         alert("Error con la información, favor de revisarla.");
@@ -85,15 +99,16 @@ function FmrEditar() {
       console.error(error);
     }
   };
+
   return (
     <div className="flex cont">
       <div className="grid">
         <div className="img_agregadas">
           <h3>Imagenes Agregadas</h3>
         </div>
-        <form onSubmit={handleSubmit(id)}>
+        <form onSubmit={() => handleSubmit(id)}>
           <div className="fmr_AgregarImg">
-            <label for="imagen">Selecciona una imagen:</label>
+            <label htmlFor="imagen">Selecciona una imagen:</label>
             <form>
               <input
                 type="file"
@@ -122,6 +137,7 @@ function FmrEditar() {
               name="descripcion"
               value={data.descripcion}
               onChange={handleChange}
+              required
             ></textarea>
           </div>
           <div className="fmr__Agregar">
@@ -132,6 +148,7 @@ function FmrEditar() {
               name="precio"
               value={data.precio}
               onChange={handleChange}
+              required
             />
           </div>
           <div className="fmr__Agregar">

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../css/ReservacionesComponent.css";
-import { useParams, Link } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import moment from "moment";
@@ -13,6 +13,7 @@ function ReservacionesComponent() {
   const [reservas, setReservas] = useState([]);
   const localizer = momentLocalizer(moment);
   const [habitacion, setHabitacion] = useState({});
+  const navigate = useNavigate();
   const [reservacion, setReservacion] = useState({
     nombre: "",
     apellido: "",
@@ -81,7 +82,18 @@ function ReservacionesComponent() {
         }
       );
       console.log("Reservación creada:", response.data);
-      alert("reservacion generada con exito.");
+      console.log("dato id ", response.data.id_reservacion);
+      const fechaEntrada = response.data.fecha_entrada;
+      const fechaFormateada = new Date(fechaEntrada)
+        .toISOString()
+        .split("T")[0];
+      const fechaSalida = response.data.fecha_salida;
+      const fechaFormateada2 = new Date(fechaSalida)
+        .toISOString()
+        .split("T")[0];
+      navigate(
+        `/final/${response.data.nombre}/${fechaFormateada}/${fechaFormateada2}/${response.data.total}/${response.data.comprobante}`
+      );
     } catch (error) {
       console.error("Error al crear la reservación:", error);
     }

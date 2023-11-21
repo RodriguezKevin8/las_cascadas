@@ -20,6 +20,7 @@ import ReservacionesComponent from "./components/ReservacionesComponent";
 import ProtectedRoute from "./Auth/ProtectedRoute";
 import CalendarioReservas from "./components/CalendarioReservas";
 import Verificar from "./components/Verificar";
+import PDFGenerator from "./components/PDFGenerator";
 
 function App() {
   return (
@@ -68,6 +69,10 @@ function App() {
           <Route path="/Admin749293" element={<Login />} />
           <Route path="/cal" element={<CalendarioReservas />} />
           <Route path="/verificar" element={<Verificar />} />
+          <Route
+            path="/final/:nombre/:fechaentrada/:fechasalida/:total/:comprobante"
+            element={<PDFGenerator />}
+          />
 
           <Route element={<ProtectedRoute />}>
             <Route path="/Administrar" element={<Admin />} />

@@ -74,11 +74,6 @@ function Navbar() {
                 </Link>
               </li>
               <li className="nav-item ml-auto">
-                <Link className="nav-link" to={`/Cometarios`}>
-                  Comentanos
-                </Link>
-              </li>
-              <li className="nav-item ml-auto">
                 <Link className="nav-link" to={`/Verificar`}>
                   Verificar Reserva
                 </Link>
