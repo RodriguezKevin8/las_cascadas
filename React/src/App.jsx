@@ -21,6 +21,8 @@ import ProtectedRoute from "./Auth/ProtectedRoute";
 import CalendarioReservas from "./components/CalendarioReservas";
 import Verificar from "./components/Verificar";
 import PDFGenerator from "./components/PDFGenerator";
+import Reportecomentario from "./components/Reportecomentario";
+import Reportereservacion from "./components/Reportereservacion";
 
 function App() {
   return (
@@ -80,6 +82,14 @@ function App() {
             <Route path="/FmrEditar/:id" element={<FmrEditar />} />
             <Route path="/prueba" element={<Hab />} />
             <Route path="/res/:id" element={<ReservacionesComponent />} />
+            <Route
+              path="/reportecomentario"
+              element={<Reportecomentario></Reportecomentario>}
+            />
+            <Route
+              path="/reportereserva"
+              element={<Reportereservacion></Reportereservacion>}
+            />
           </Route>
         </Routes>
       </div>

@@ -1,0 +1,24 @@
+.report-title {
+  text-align: center;
+}
+
+.table-container {
+  max-height: 400px; /* Ajusta la altura máxima según tus necesidades */
+  overflow-y: auto;
+}
+
+.scrollable-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.scrollable-table th,
+.scrollable-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.scrollable-table th {
+  background-color: #f2f2f2;
+}

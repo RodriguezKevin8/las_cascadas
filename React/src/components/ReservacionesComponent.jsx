@@ -56,8 +56,6 @@ function ReservacionesComponent() {
     const fechaSalida = new Date(reservacion.fecha_salida);
     const diferenciaTiempo = fechaSalida - fechaEntrada;
     const diferenciaDias = Math.ceil(diferenciaTiempo / (1000 * 60 * 60 * 24));
-    precio1 = diferenciaDias + 1 * habitacion.precio;
-
     return diferenciaDias + 1;
   };
 
@@ -71,6 +69,9 @@ function ReservacionesComponent() {
       reservacion.fecha_salida
     ).toISOString();
 
+    const diasReserva = calcularDiferenciaDias();
+    const total = diasReserva * habitacion.precio;
+
     try {
       const response = await axios.post(
         "http://localhost:3000/api/reservacion",
@@ -78,7 +79,7 @@ function ReservacionesComponent() {
           ...reservacion,
           fecha_entrada: formattedFechaEntrada,
           fecha_salida: formattedFechaSalida,
-          total: precio1,
+          total: total,
         }
       );
       console.log("Reservación creada:", response.data);

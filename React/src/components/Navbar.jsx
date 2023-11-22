@@ -79,9 +79,16 @@ function Navbar() {
                 </Link>
               </li>
               {token && (
-                <li className="nav-item ml-auto">
-                  <button onClick={handleLogout}>Cerrar Sesión</button>
-                </li>
+                <>
+                  <li className="nav-item ml-auto">
+                    <Link className="nav-link" to={`/administrar`}>
+                      Admin
+                    </Link>
+                  </li>
+                  <li className="nav-item ml-auto">
+                    <button onClick={handleLogout}>Cerrar Sesión</button>
+                  </li>
+                </>
               )}
             </ul>
           </div>

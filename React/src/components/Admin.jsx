@@ -47,6 +47,12 @@ function Admin() {
       <Link to={`/FmrAgregar`}>
         <button className="btn">Agregar Habitacion</button>
       </Link>
+      <Link to={`/reportecomentario`}>
+        <button className="btn">Ver reporte comentario</button>
+      </Link>
+      <Link to={`/reportereserva`}>
+        <button className="btn">Ver reporte reservaciones</button>
+      </Link>
       <div className="habitaciones">
         {habitaciones.map((habitacion, index) => (
           <div className="habitacion" key={index}>
