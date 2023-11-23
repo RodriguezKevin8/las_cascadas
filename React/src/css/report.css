@@ -5,20 +5,14 @@
 .table-container {
   max-height: 400px; /* Ajusta la altura máxima según tus necesidades */
   overflow-y: auto;
+  max-width: 700px;
+  width: 95%;
 }
 
 .scrollable-table {
   width: 100%;
   border-collapse: collapse;
 }
-
-.scrollable-table th,
-.scrollable-table td {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: left;
-}
-
-.scrollable-table th {
-  background-color: #f2f2f2;
+.reservacion {
+  padding: 2rem;
 }

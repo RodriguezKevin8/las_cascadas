@@ -34,7 +34,7 @@ const Home = () => {
             />
           </Col>
           <Col sm={12} md={6}>
-            <div className="centrado">
+            <div className="centrado arreglado">
               <div className="text-center mb-3 seccion1">
                 <h2 className="textoh">Las Cascadas</h2>
               </div>

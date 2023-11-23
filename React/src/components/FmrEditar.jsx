@@ -105,8 +105,9 @@ function FmrEditar() {
       <div className="grid">
         <div className="img_agregadas">
           <h3>Imagenes Agregadas</h3>
-        </div>
-        <form onSubmit={() => handleSubmit(id)}>
+        </div>        
+      <div className="">
+      <form onSubmit={() => handleSubmit(id)}>
           <div className="fmr_AgregarImg">
             <label htmlFor="imagen">Selecciona una imagen:</label>
             <form>
@@ -127,8 +128,7 @@ function FmrEditar() {
             />
           </div>
         </form>
-      </div>
-      <div className="grid">
+        <br />
         <form onSubmit={datas}>
           <div className="fmr__Agregar">
             <label>Descripcion:</label>
@@ -159,6 +159,7 @@ function FmrEditar() {
             />
           </div>
         </form>
+      </div>
       </div>
     </div>
   );

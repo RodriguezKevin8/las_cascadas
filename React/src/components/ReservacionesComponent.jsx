@@ -112,15 +112,51 @@ function ReservacionesComponent() {
   return (
     <div>
       <div className="detalles">
+            <div id="carouselExampleAutoplaying" className="carousel slide" data-bs-ride="carousel">
+      <div className="carousel-inner">
+        <div className="carousel-item active">
         <img
           src={`http://localhost:3000/api/images/${
             habitacion.fotos && habitacion.fotos.length > 0
               ? habitacion.fotos[0].foto1
               : ""
           }`}
-          alt="Foto 2"
-          className="img__habitacion"
+          alt="Foto 1"
+          className="img__habitacion d-block w-100"
         />
+        </div>
+        <div className="carousel-item">
+        <img
+          src={`http://localhost:3000/api/images/${
+            habitacion.fotos && habitacion.fotos.length > 0
+              ? habitacion.fotos[0].foto2
+              : ""
+          }`}
+          alt="Foto 2"
+          className="img__habitacion d-block w-100"
+        />
+        </div>
+        <div className="carousel-item">
+        <img
+          src={`http://localhost:3000/api/images/${
+            habitacion.fotos && habitacion.fotos.length > 0
+              ? habitacion.fotos[0].foto3
+              : ""
+          }`}
+          alt="Foto 3"
+          className="img__habitacion d-block w-100"
+        />
+        </div>
+      </div>
+      <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span className="visually-hidden">Previous</span>
+      </button>
+      <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+        <span className="carousel-control-next-icon" aria-hidden="true"></span>
+        <span className="visually-hidden">Next</span>
+      </button>
+    </div>
 
         <div className="detalles__info">
           <div className="info__detalle">
@@ -140,7 +176,15 @@ function ReservacionesComponent() {
             <p>{habitacion.capacidad}</p>
           </div>
         </div>
+
       </div>
+     <div className="descripcion">
+     <div className="info__detalle">
+          <span>Descripcion:</span>
+          <p>{habitacion.descripcion}</p>
+      </div>
+     </div>
+     
       <div className="reservaciones-container">
         {reservas.length > 0 && (
           <div>
@@ -159,7 +203,6 @@ function ReservacionesComponent() {
             />
           </div>
         )}
-        <h1>Crear Reservación</h1>
         <form onSubmit={handleSubmit}>
           <label>
             Nombre:
