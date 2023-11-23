@@ -29,7 +29,7 @@ export default function Reservacion() {
           </div>
           <div className="Rform__campo">
             <label htmlFor="fecha" className="Rform__label">
-              Tipo de Habitacion
+              Tipo de Habitacio
             </label>
             <select
               name="tipoHabitacion"

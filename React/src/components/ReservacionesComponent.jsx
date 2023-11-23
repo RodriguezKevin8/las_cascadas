@@ -128,7 +128,7 @@ function ReservacionesComponent() {
             <p>${habitacion.precio}</p>
           </div>
           <div className="info__detalle">
-            <span>Numero Habitacion:</span>
+            <span>Numero:</span>
             <p>{habitacion.numero}</p>
           </div>
           <div className="info__detalle">

@@ -14,24 +14,14 @@ export default function Reportecomentario() {
   return (
     <div className="container11">
       <h1>Comentarios</h1>
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Usuario</th>
-            <th>Comentario</th>
-          </tr>
-        </thead>
-        <tbody>
-          {Reportereservacion.map((comentario) => (
-            <tr key={comentario.id_reportecomentario}>
-              <td>{comentario.id_reportecomentario}</td>
-              <td>{comentario.nombre}</td>
-              <td>{comentario.detalle}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <div className="comentarios">
+        {Reportereservacion.map((comentario) =>(
+            <div className="Usuario" key={comentario.id_reportecomentario}>
+                <p><b>Usuario: </b>{comentario.nombre}</p>
+                <p><b>Comentario:</b><br />{comentario.detalle}</p>
+            </div>
+        ))}
+      </div>
     </div>
   );
 }

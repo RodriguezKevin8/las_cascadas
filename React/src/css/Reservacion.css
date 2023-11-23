@@ -11,7 +11,7 @@
 }
 @media (min-width: 996px) {
   .filtros {
-    padding-bottom: 15rem;
+    padding-bottom: 7rem;
   }
 }
 .Reserv_btn-Buscar {
@@ -33,36 +33,39 @@
   flex-direction: column;
   text-align: left;
 }
+.Rform__label {
+  color: white;
+}
 .Rform__select {
-  padding: 0.5rem;
+  padding: 0.5rem 2rem;
 }
 
-@media (min-width: 768px) {
-  .Rform {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.5rem;
-  }
-  .Rbtn {
-    grid-column: 1 / 4;
-  }
-  .Reserv_btn-Buscar {
-    margin-top: 1.4rem;
+@media (min-width: 762px) {
+  .filtros {
+    margin-bottom: 7rem;
   }
 }
-.select {
-  padding-bottom: 0.65rem;
+@media (max-width: 768px) {
+  .habitacion {
+    min-width: 300px;
+    width: 95%;
+  }
+  .filtros {
+    margin-bottom: 7rem;
+  }
 }
+
 @media (min-width: 996px) {
-  .Rform {
+  /* .Rform {
     grid-template-columns: repeat(3, 1fr);
     gap: 0.5rem;
-  }
+  } */
   .Rform__campo {
-    justify-content: center;
+    margin: 0 auto;
   }
-  .Rbtn {
+  /* .Rbtn {
     grid-column: 3/3;
-  }
+  } */
 }
 .img__habitacion {
   width: 300px;

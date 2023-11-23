@@ -25,15 +25,15 @@ export default function ResHabitaciones() {
     setSelectedDate(e.target.value);
   };
 
-  const handleBuscarClick = () => {
-    const today = new Date();
-    const selected = new Date(selectedDate);
+  // const handleBuscarClick = () => {
+  //   const today = new Date();
+  //   const selected = new Date(selectedDate);
 
-    if (selected < today) {
-      alert("La fecha seleccionada no puede ser anterior a la fecha actual.");
-      return;
-    }
-  };
+  //   if (selected < today) {
+  //     alert("La fecha seleccionada no puede ser anterior a la fecha actual.");
+  //     return;
+  //   }
+  // };
 
   const habitacionesFiltradas = habitaciones.filter((habitacion) => {
     if (tipoFiltro === "todos" && habitacion.disponibilidad === "Activo") {
@@ -54,21 +54,21 @@ export default function ResHabitaciones() {
               <label htmlFor="fecha" className="Rform__label">
                 Tipo de Habitacion
               </label>
-              <select value={tipoFiltro} onChange={handleChange}>
+              <select value={tipoFiltro} onChange={handleChange} className="Rform__select">
                 <option value="todos">Todos</option>
                 <option value="individual">Individual</option>
                 <option value="doble">Doble</option>
                 <option value="suite">Suite</option>
               </select>
             </div>
-            <div className="Rform__campo Rbtn">
+            {/* <div className="Rform__campo Rbtn">
               <input
                 className="Reserv_btn-Buscar"
                 type="button"
                 value={"Buscar"}
                 onClick={handleBuscarClick}
               />
-            </div>
+            </div> */}
           </form>
         </div>
       </div>
