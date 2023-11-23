@@ -2,7 +2,7 @@ import React from "react";
 import jsPDF from "jspdf";
 import img1 from "../images/logito.png";
 import { useParams, Link } from "react-router-dom";
-
+import '../css/pdf.css';
 const PDFGenerator = () => {
   const { nombre, fechaentrada, fechasalida, total, comprobante } = useParams();
   const generatePDF = () => {
@@ -36,7 +36,7 @@ const PDFGenerator = () => {
   };
 
   return (
-    <div>
+    <div className="exito">
       <h2 style={{ textAlign: "center", color: "#2c3e50", margin: "30px" }}>
         ¡Gracias por preferirnos en Las Cascadas!
       </h2>
@@ -46,17 +46,6 @@ const PDFGenerator = () => {
       </p>
       <button
         onClick={generatePDF}
-        style={{
-          backgroundColor: "#3498db",
-          color: "#fff",
-          padding: "10px 20px",
-          borderRadius: "5px",
-          cursor: "pointer",
-          border: "none",
-          fontSize: "16px",
-          margin: "20px",
-          textAlign: "center",
-        }}
       >
         Generar Comprobante
       </button>

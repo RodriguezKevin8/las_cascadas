@@ -7,7 +7,7 @@
 }
 @media (min-width: 768px) {
   .detalles {
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
   }
 }

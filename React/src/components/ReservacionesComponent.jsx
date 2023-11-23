@@ -259,7 +259,9 @@ function ReservacionesComponent() {
             />
           </label>
           <p>Días de reserva: {calcularDiferenciaDias()}</p>
+          <div className="exito">
           <button type="submit">Guardar Reservación</button>
+          </div>
         </form>
       </div>
     </div>
