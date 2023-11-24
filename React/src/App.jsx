@@ -46,7 +46,7 @@ function App() {
               <Route path="/" element={<h1>Las cascadas</h1>} />
               <Route path="/home" element={<h1>Las cascadas</h1>} />
               <Route path="/about" element={<h1>Sobre Nosotros</h1>} />
-              <Route path="/contact" element={<h1>Contactanos</h1>} />
+              <Route path="/contact" element={<h1>Comentanos</h1>} />
               <Route path="/comentarios" element={<h1>Comentarios</h1>} />
               {/* <Route path="/Reservacion" element={<Reservacion/>}/>  */}
               <Route

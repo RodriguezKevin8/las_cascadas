@@ -13,6 +13,7 @@ function ReservacionesComponent() {
   const [reservas, setReservas] = useState([]);
   const localizer = momentLocalizer(moment);
   const [habitacion, setHabitacion] = useState({});
+  const [showAlert, setShowAlert] = useState(false);
   const navigate = useNavigate();
   const [reservacion, setReservacion] = useState({
     nombre: "",
@@ -44,6 +45,10 @@ function ReservacionesComponent() {
         console.error("Error al obtener las fechas de entrada:", error);
       });
   }, [id]);
+
+  const handleShowAlert = () => {
+    setShowAlert(true);
+  };
 
   let precio1;
   const handleInputChange = (e) => {
@@ -108,87 +113,116 @@ function ReservacionesComponent() {
   eventos.forEach((evento) => {
     evento.end.setDate(evento.end.getDate() + 2);
   });
+  const fechaActual = new Date().toISOString().split("T")[0];
 
   return (
     <div>
       <div className="detalles">
-            <div id="carouselExampleAutoplaying" className="carousel slide" data-bs-ride="carousel">
-      <div className="carousel-inner">
-        <div className="carousel-item active">
-        <img
-          src={`http://localhost:3000/api/images/${
-            habitacion.fotos && habitacion.fotos.length > 0
-              ? habitacion.fotos[0].foto1
-              : ""
-          }`}
-          alt="Foto 1"
-          className="img__habitacion d-block w-100"
-        />
+        <div className="carousel-container">
+          <div
+            id="carouselExampleAutoplaying"
+            className="carousel slide"
+            data-bs-ride="carousel"
+          >
+            <div className="carousel-inner">
+              <div className="carousel-item active">
+                <img
+                  src={`http://localhost:3000/api/images/${
+                    habitacion.fotos && habitacion.fotos.length > 0
+                      ? habitacion.fotos[0].foto1
+                      : ""
+                  }`}
+                  alt="Foto 1"
+                  className="img__habitacion d-block w-100"
+                />
+              </div>
+              <div className="carousel-item">
+                <img
+                  src={`http://localhost:3000/api/images/${
+                    habitacion.fotos && habitacion.fotos.length > 0
+                      ? habitacion.fotos[0].foto2
+                      : ""
+                  }`}
+                  alt="Foto 2"
+                  className="img__habitacion d-block w-100"
+                />
+              </div>
+              <div className="carousel-item">
+                <img
+                  src={`http://localhost:3000/api/images/${
+                    habitacion.fotos && habitacion.fotos.length > 0
+                      ? habitacion.fotos[0].foto3
+                      : ""
+                  }`}
+                  alt="Foto 3"
+                  className="img__habitacion d-block w-100"
+                />
+              </div>
+            </div>
+            <button
+              className="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselExampleAutoplaying"
+              data-bs-slide="prev"
+            >
+              <span
+                className="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span className="visually-hidden">Previous</span>
+            </button>
+            <button
+              className="carousel-control-next"
+              type="button"
+              data-bs-target="#carouselExampleAutoplaying"
+              data-bs-slide="next"
+            >
+              <span
+                className="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span className="visually-hidden">Next</span>
+            </button>
+          </div>
         </div>
-        <div className="carousel-item">
-        <img
-          src={`http://localhost:3000/api/images/${
-            habitacion.fotos && habitacion.fotos.length > 0
-              ? habitacion.fotos[0].foto2
-              : ""
-          }`}
-          alt="Foto 2"
-          className="img__habitacion d-block w-100"
-        />
-        </div>
-        <div className="carousel-item">
-        <img
-          src={`http://localhost:3000/api/images/${
-            habitacion.fotos && habitacion.fotos.length > 0
-              ? habitacion.fotos[0].foto3
-              : ""
-          }`}
-          alt="Foto 3"
-          className="img__habitacion d-block w-100"
-        />
-        </div>
-      </div>
-      <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span className="visually-hidden">Previous</span>
-      </button>
-      <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-        <span className="carousel-control-next-icon" aria-hidden="true"></span>
-        <span className="visually-hidden">Next</span>
-      </button>
-    </div>
 
         <div className="detalles__info">
           <div className="info__detalle">
-            <span>precio:</span>
-            <p>${habitacion.precio}</p>
+            <span style={{ textAlign: "left" }}>Precio:</span>
+            <p style={{ textAlign: "left" }}>${habitacion.precio}</p>
           </div>
           <div className="info__detalle">
-            <span>Numero:</span>
-            <p>{habitacion.numero}</p>
+            <span style={{ textAlign: "left" }}>Número:</span>
+            <p style={{ textAlign: "left" }}>{habitacion.numero}</p>
           </div>
           <div className="info__detalle">
-            <span>Tipo:</span>
-            <p>{habitacion.tipo}</p>
+            <span style={{ textAlign: "left" }}>Tipo:</span>
+            <p style={{ textAlign: "left" }}>{habitacion.tipo}</p>
           </div>
           <div className="info__detalle">
-            <span>Capacidad:</span>
-            <p>{habitacion.capacidad}</p>
+            <span style={{ textAlign: "left" }}>Capacidad:</span>
+            <p style={{ textAlign: "left" }}>{habitacion.capacidad}</p>
           </div>
         </div>
+      </div>
 
+      <div style={{ maxWidth: "700px", margin: "0 auto" }}>
+        <div className="descripcion">
+          <div className="info__detalle">
+            <span>Descripción:</span>
+            <p style={{ textAlign: "justify", padding: "10px" }}>
+              {habitacion.descripcion}
+            </p>
+          </div>
+        </div>
       </div>
-     <div className="descripcion">
-     <div className="info__detalle">
-          <span>Descripcion:</span>
-          <p>{habitacion.descripcion}</p>
-      </div>
-     </div>
-     
+
       <div className="reservaciones-container">
         {reservas.length > 0 && (
           <div>
-            <h2>Calendario de Reservas</h2>
+            <h2 style={{ textAlign: "center", marginBottom: "60px" }}>
+              Calendario de Reservas
+            </h2>
             <Calendar
               localizer={localizer}
               events={eventos}
@@ -203,64 +237,88 @@ function ReservacionesComponent() {
             />
           </div>
         )}
-        <form onSubmit={handleSubmit}>
-          <label>
-            Nombre:
-            <input
-              type="text"
-              name="nombre"
-              value={reservacion.nombre}
-              onChange={handleInputChange}
-            />
-          </label>
-          <label>
-            Apellido:
-            <input
-              type="text"
-              name="apellido"
-              value={reservacion.apellido}
-              onChange={handleInputChange}
-            />
-          </label>
-          <label>
-            Correo Electrónico:
-            <input
-              type="email"
-              name="correo_electronico"
-              value={reservacion.correo_electronico}
-              onChange={handleInputChange}
-            />
-          </label>
-          <label>
-            Teléfono:
-            <input
-              type="tel"
-              name="telefono"
-              value={reservacion.telefono}
-              onChange={handleInputChange}
-            />
-          </label>
-          <label>
-            Fecha de Entrada:
-            <input
-              type="date"
-              name="fecha_entrada"
-              value={reservacion.fecha_entrada}
-              onChange={handleInputChange}
-            />
-          </label>
-          <label>
-            Fecha de Salida:
-            <input
-              type="date"
-              name="fecha_salida"
-              value={reservacion.fecha_salida}
-              onChange={handleInputChange}
-            />
-          </label>
-          <p>Días de reserva: {calcularDiferenciaDias()}</p>
-          <button type="submit">Guardar Reservación</button>
-        </form>
+      </div>
+      <div style={{ padding: "10px" }}>
+        <div>
+          <form onSubmit={handleSubmit} className="form__reservacion">
+            <div className="form-group">
+              <label htmlFor="nombre">Nombre:</label>
+              <input
+                type="text"
+                id="nombre"
+                name="nombre"
+                required
+                value={reservacion.nombre}
+                onChange={handleInputChange}
+              />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="apellido">Apellido:</label>
+              <input
+                type="text"
+                id="apellido"
+                name="apellido"
+                required
+                value={reservacion.apellido}
+                onChange={handleInputChange}
+              />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="correo_electronico">Correo Electrónico:</label>
+              <input
+                type="email"
+                id="correo_electronico"
+                name="correo_electronico"
+                required
+                value={reservacion.correo_electronico}
+                onChange={handleInputChange}
+              />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="telefono">Teléfono:</label>
+              <input
+                type="tel"
+                id="telefono"
+                name="telefono"
+                required
+                value={reservacion.telefono}
+                onChange={handleInputChange}
+              />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="fecha_entrada">Fecha de Entrada:</label>
+              <input
+                type="date"
+                id="fecha_entrada"
+                name="fecha_entrada"
+                required
+                min={fechaActual}
+                value={reservacion.fecha_entrada}
+                onChange={handleInputChange}
+              />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="fecha_salida">Fecha de Salida:</label>
+              <input
+                type="date"
+                id="fecha_salida"
+                name="fecha_salida"
+                required
+                min={fechaActual}
+                value={reservacion.fecha_salida}
+                onChange={handleInputChange}
+              />
+            </div>
+
+            <p>Días de reserva: {calcularDiferenciaDias()}</p>
+            <button type="submit">Guardar Reservación</button>
+          </form>
+        </div>
       </div>
     </div>
   );

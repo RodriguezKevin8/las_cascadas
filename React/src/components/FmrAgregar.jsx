@@ -3,12 +3,13 @@ import "../css/FmrAgregar.css";
 import Habitacion from "../images/habitacion.avif";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 function FmrAgregar() {
   const [selectedImages, setSelectedImages] = useState([]);
   const [fotos, setFotos] = useState([]);
   const navigate = useNavigate();
+  const [habitacionGuardada, setHabitacionGuardada] = useState(false);
 
   const fetchfotos = (id) => {
     axios
@@ -83,6 +84,7 @@ function FmrAgregar() {
 
           reset();
           alert("Habitacion generada con exito.");
+          setHabitacionGuardada(true);
         }
       } else {
         navigate("/admin749293");
@@ -230,6 +232,11 @@ function FmrAgregar() {
             <button className="boton btnAgregar" type="submit">
               Agregar
             </button>
+            {habitacionGuardada && (
+              <Link to={"/administrar"}>
+                <button className="boton regresar">Regresar</button>
+              </Link>
+            )}
           </div>
           <br />
         </form>

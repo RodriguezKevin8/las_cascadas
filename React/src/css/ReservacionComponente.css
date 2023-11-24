@@ -16,4 +16,20 @@ button {
   padding: 8px;
 }
 
-/* Puedes agregar más estilos según sea necesario */
+.reservacion {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h3 {
+  margin: 10px 0;
+}
+
+.butt {
+  background-color: #c82333;
+}

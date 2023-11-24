@@ -1,11 +1,11 @@
 import React from "react";
 import { MDBContainer, MDBCard, MDBCardBody, MDBInput } from "mdb-react-ui-kit";
 import { useState } from "react";
-import Alert from "./Alert";
-import { Link, Navigate } from "react-router-dom"; // Importa Link desde react-router-dom
 import { useNavigate } from "react-router-dom";
 import "../css/login.css";
 import axios from "axios";
+
+import logo from "../images/logito.png";
 
 function Login() {
   const [data, setData] = useState({
@@ -58,46 +58,47 @@ function Login() {
   };
   return (
     <MDBContainer fluid>
-      <div
-        className="p-2 p-sm-5 p-md-5 p-lg-5 p-xl-5"
-        style={{ height: "100px" }}
-      ></div>
-      <MDBCard
-        className="mx-2 mx-sm-5 mx-md-5 mx-lg-5 mx-xl-5 mb-4 mb-sm-5 mb-md-5 mb-lg-5 mb-xl-5 p-4 p-sm-5 p-md-5 p-lg-5 p-xl-5 shadow-5"
-        style={{
-          background: "hsla(0, 0%, 100%, 0.8)",
-          backdropFilter: "blur(30px)",
-        }}
-      >
-        <MDBCardBody className="p-4 p-sm-5 p-md-5 p-lg-5 p-xl-5 text-center">
-          <h2 className="fw-bold mb-4 mb-sm-5 mb-md-5 mb-lg-5 mb-xl-5 colora">
-            Administrador
-          </h2>
-          <form onSubmit={handleSubmit}>
-            <MDBInput
-              wrapperClass="mb-4 mb-sm-5 mb-md-5 mb-lg-5 mb-xl-5"
-              label="Email"
-              id="email"
-              name="correo"
-              value={data.correo}
-              onChange={handleChange}
-            />
-            <MDBInput
-              wrapperClass="mb-4 mb-sm-5 mb-md-5 mb-lg-5 mb-xl-5"
-              label="Password"
-              id="password"
-              type="password"
-              name="contrase_a"
-              value={data.contrase_a}
-              onChange={handleChange}
-            />
+      <div className="d-flex align-items-center justify-content-center min-vh-100">
+        <MDBCard
+          className="w-100 mx-2 mx-sm-5 mx-md-5 mx-lg-5 mx-xl-5 p-4 p-sm-5 p-md-5 p-lg-5 p-xl-5 shadow-5"
+          style={{
+            background: "hsla(0, 0%, 100%, 0.8)",
+            backdropFilter: "blur(30px)",
+          }}
+        >
+          <MDBCardBody className="p-3 p-sm-5 p-md-5 p-lg-5 p-xl-5 text-center">
+            <img src={logo} className="mt-2 mb-5" alt="" />
+            <h2 className="fw-bold mb-4 mb-sm-5 mb-md-5 mb-lg-5 mb-xl-5 colora">
+              Administrador
+            </h2>
+            <form onSubmit={handleSubmit}>
+              <MDBInput
+                wrapperClass="mb-4 mb-sm-5 mb-md-5 mb-lg-5 mb-xl-5"
+                label="Email"
+                id="email"
+                name="correo"
+                placeholder="Correo electronico"
+                value={data.correo}
+                onChange={handleChange}
+              />
+              <MDBInput
+                wrapperClass="mb-4 mb-sm-5 mb-md-5 mb-lg-5 mb-xl-5"
+                label="Password"
+                id="password"
+                type="password"
+                placeholder="Contraseña"
+                name="contrase_a"
+                value={data.contrase_a}
+                onChange={handleChange}
+              />
 
-            <button type="submit" className="btn btn-light">
-              Iniciar sesión
-            </button>
-          </form>
-        </MDBCardBody>
-      </MDBCard>
+              <button type="submit" className="btn btn-light">
+                Iniciar sesión
+              </button>
+            </form>
+          </MDBCardBody>
+        </MDBCard>
+      </div>
     </MDBContainer>
   );
 }

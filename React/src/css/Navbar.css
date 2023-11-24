@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Montserrat:wght@300&display=swap");
 :root {
   --blanco: #fff;
   --negro: #000;
@@ -55,4 +56,8 @@
 }
 .navbar-fixed .navbar-brand img {
   filter: none;
+}
+
+li {
+  font-family: "Inter", sans-serif;
 }

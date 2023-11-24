@@ -5,7 +5,7 @@
 .table-container {
   max-height: 400px; /* Ajusta la altura máxima según tus necesidades */
   overflow-y: auto;
-  max-width: 700px;
+  max-width: 800px;
   width: 95%;
 }
 

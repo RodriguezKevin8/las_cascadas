@@ -58,12 +58,15 @@ const ReservacionComponente = () => {
 
       {reservacion.map((reserva, index) => (
         <div className="reservacion" key={index}>
-          <h3>Nombre: {reserva.nombre}</h3>
-          <h3>Correo electrónico: {reserva.correo_electronico}</h3>
-          <h3>Fecha de entrada: {formatFecha(reserva.fecha_entrada)}</h3>
-          <h3>Fecha de salida: {formatFecha(reserva.fecha_salida)}</h3>
-          <h3>Total: {reserva.total}</h3>
-          <button onClick={() => handleEliminarClick(reserva.id_reservacion)}>
+          <p>Nombre: {reserva.nombre}</p>
+          <p>Correo electrónico: {reserva.correo_electronico}</p>
+          <p>Fecha de entrada: {formatFecha(reserva.fecha_entrada)}</p>
+          <p>Fecha de salida: {formatFecha(reserva.fecha_salida)}</p>
+          <p>Total: ${reserva.total}</p>
+          <button
+            className="butt"
+            onClick={() => handleEliminarClick(reserva.id_reservacion)}
+          >
             Eliminar Reservación
           </button>
         </div>

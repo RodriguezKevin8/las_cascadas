@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "../css/Contact.css";
-
+import { Link } from "react-router-dom";
 function Contact() {
   const [formData, setFormData] = useState({
     nombre: "",
@@ -35,10 +35,10 @@ function Contact() {
 
   return (
     <div className="contacto">
-      <h2 className="titulo__contactanos">Envianos un mensaje!</h2>
-      <div className="contacto-bg">
-        <div className="opacidad-contactos"></div>
-      </div>
+      <h2 className="titulo__contactanos">
+        Envíanos un mensaje y cuéntanos tu experiencia
+      </h2>
+      <div className="contacto-bg"></div>
       <form className="formulario" onSubmit={handleSubmit}>
         <div className="formulario__campo">
           <label className="formulario__label" htmlFor="nombre">
@@ -53,7 +53,7 @@ function Contact() {
           />
         </div>
         <div className="formulario__campo">
-          <label className="formulario__label" htmlFor="mensaje">
+          <label className="formulario__label" htmlFor="detalle">
             Mensaje
           </label>
           <textarea
@@ -63,9 +63,11 @@ function Contact() {
             onChange={handleChange}
           ></textarea>
         </div>
-        <div className="formulario__campo  ">
-          <input type="submit" value={"Enviar"} className="boton enviar" />
-          <button className="boton regresar">Regresar</button>
+        <div className="formulario__campo">
+          <input type="submit" value="Enviar" className="boton enviar" />
+          <Link to="/">
+            <button className="boton regresar">Regresar</button>
+          </Link>
         </div>
       </form>
     </div>

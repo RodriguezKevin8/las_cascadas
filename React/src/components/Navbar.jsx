@@ -35,6 +35,8 @@ function Navbar() {
 
   return (
     <div>
+      <style></style>
+
       <nav className={navbarClasses}>
         <div className="container">
           <Link className="navbar-brand" to={`/home`}>
@@ -65,7 +67,7 @@ function Navbar() {
               </li>
               <li className="nav-item ml-auto">
                 <Link className="nav-link" to={`/contact`}>
-                  Contactanos
+                  Comentanos
                 </Link>
               </li>
               <li className="nav-item ml-auto">

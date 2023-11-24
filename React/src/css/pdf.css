@@ -1,0 +1,13 @@
+.exito {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.exito button {
+  width: 15rem;
+  background-color: var(--colorBoton);
+}
+
+.exito button:hover {
+  background-color: var(--color3);
+}

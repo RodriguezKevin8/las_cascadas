@@ -11,6 +11,7 @@ export default function ResHabitaciones() {
   const [selectedDate, setSelectedDate] = useState("");
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     fetch("http://localhost:3000/api/detalleshabitacion")
       .then((response) => response.json())
       .then((data) => setHabitaciones(data))
@@ -47,14 +48,18 @@ export default function ResHabitaciones() {
   return (
     <div>
       <div className="filtros">
-        <h1 className="h1">Reservacion</h1>
+        <h1 className="h1">reservación</h1>
         <div className="Reservacion container">
           <form className="Rform">
             <div className="Rform__campo">
               <label htmlFor="fecha" className="Rform__label">
                 Tipo de Habitacion
               </label>
-              <select value={tipoFiltro} onChange={handleChange} className="Rform__select">
+              <select
+                value={tipoFiltro}
+                onChange={handleChange}
+                className="Rform__select"
+              >
                 <option value="todos">Todos</option>
                 <option value="individual">Individual</option>
                 <option value="doble">Doble</option>
